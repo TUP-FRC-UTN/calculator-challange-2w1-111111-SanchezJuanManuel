@@ -1,0 +1,51 @@
+<h1 style="text-align: center">Calculadora</h1>
+
+<div class="col-6">
+
+
+<div class="container text-center" style="width: 480px">
+  
+  <div class="row g-2 justify-content-center">
+    <div class="col-6">
+      <div class="p-2">
+        <label for="txtNumero1">Valor 1</label>
+        <input
+          type="text"
+          name="txtNumero1"
+          [value]="num1"
+          (input)="actualizarNum1($event)"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row g-2 justify-content-center">
+    <div class="col-6">
+      <div class="p-2">
+        <label for="txtNumero2">Valor 2</label>
+        <input
+          type="text"
+          name="txtNumero2"
+          [value]="num2"
+          (input)="actualizarNum2($event)"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row g-2 justify-content-center">
+  <div class="col-6">
+    <div class="p-2">
+      <label for="txtResultado">Resultado</label>
+      <input type="text" name="txtResultado" [value]="resultado" />
+    </div>
+  </div>
+</div>
+  
+
+    <app-calc-buttons
+      [numero1]="num1"
+      [numero2]="num2"
+      (onCalcularResultado)="mostrarResultado($event)"
+      (onLimpiarTodo)="limpiarCampos()"
+    ></app-calc-buttons>
+  </div>
+</div>
